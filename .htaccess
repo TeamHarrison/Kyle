@@ -1,0 +1,59 @@
+
+RewriteEngine on
+
+RewriteOptions inherit
+# Redirect to domain without www.
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule .* http://%1%{REQUEST_URI} [R=301,L]
+# Same for HTTPS:
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule .* https://%1%{REQUEST_URI} [R=301,L]
+
+DirectoryIndex index.php index.shtml index.html index.htm
+
+# Rewrite Rules
+# RewriteCond %{QUERY_STRING} ^$
+# RewriteRule ^stuff$ /stuff.html? [L]
+
+# RewriteCond %{QUERY_STRING} ^$
+# RewriteRule ^about$ /about.html? [L]
+
+# Caching schema
+<FilesMatch "\.(jpg|png|gif|css|js)$">
+Header set Cache-Control "proxy-revalidate, max-age=0"
+</FilesMatch>
+
+# Password Protect file
+<Files /special>
+AuthName "Prompt"
+AuthType Basic
+AuthUserFile .htpasswd
+Require valid-user
+</Files>
+
+# Prevent viewing of .htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# Prevent directory listings
+Options All -Indexes
+
+# Enable SSI
+Options +Includes 
+AddType text/html .html 
+AddOutputFilter INCLUDES .html
+ 
+# Compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
