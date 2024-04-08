@@ -1,5 +1,7 @@
-<!--#set var="page_title" value="Hi 👋" -->
-<!--#include virtual="/header.html" -->
+<?php 
+$page_title = "Hi 👋";
+?>
+<?php require_once('header.php'); ?>
 <h1>Kyle Harrison.</h1>
 <p>aka "RedactedProfile", "SneakyNinja", "DJDarkViper", "Ky."</p>
 
@@ -9,4 +11,4 @@
 <p>"One of the programmers of the world"</p>
 </blockquote>
 <p></p>
-<!--#include virtual="/footer.html" -->
+<?php require_once('footer.php'); ?>
