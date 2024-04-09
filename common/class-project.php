@@ -10,7 +10,7 @@ class Project {
 
     public static function Collect() {
         $projects = [];
-        $pattern = __DIR__ . "../projects/*.php";
+        $pattern = __DIR__ . "/../projects/*.php";
         foreach(glob($pattern) as $file) {
             $project = new Project();
             $project->file = $file;

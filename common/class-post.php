@@ -9,7 +9,7 @@ class Post {
 
     public static function Collect() {
         $posts = [];
-        $pattern = __DIR__ . "../posts/*.php";
+        $pattern = __DIR__ . "/../posts/*.php";
         foreach(glob($pattern) as $file) {
             $post = new Post();
             $post->file = $file;
