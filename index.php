@@ -1,4 +1,5 @@
 <?php 
+$setting_show_banner = false; // hide banner as home page uses h1 for my name instead 
 $page_title = "Hi 👋";
 ?>
 <?php require_once('header.php'); ?>
