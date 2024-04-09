@@ -1,3 +1,8 @@
+<?php 
+// Default settings
+if(!isset($setting_show_banner)) { $setting_show_banner = true; }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,3 +52,6 @@
 	</style>
 </head>
 <body>
+<?php if($setting_show_banner): ?>
+<div id="banner">Kyle Harrison.</div>
+<?php endif; ?>
