@@ -36,6 +36,7 @@ if(!isset($setting_show_banner)) { $setting_show_banner = true; }
 	        width: var(--mobile-breakpoint);
 	    }
 	    h1, #banner {
+			font-weight: bold;
 	        font-size: 12pt;
 	        text-decoration: underline;
 	    }
