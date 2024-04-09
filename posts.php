@@ -24,7 +24,7 @@ foreach(glob($pattern) as $file) {
     }
     if (preg_match("/\\\$date\s*=\s*['\"](.*?)['\"];/", $content, $matches)) {
         $date = $matches[1];
-        $post->date = new \DateTime(strtotime($date));
+        $post->date = new \DateTime($date);
     }
 
     if($post->title) {
