@@ -1,5 +1,10 @@
 <?php 
 $page_title = "Stuff";
+
+require_once('./common/class-project.php');
+
+$projects = Project::Collect();
+
 ?>
 <?php require_once('header.php'); ?>
 <h1>Stuff.</h1>
