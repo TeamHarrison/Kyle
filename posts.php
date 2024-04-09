@@ -49,7 +49,7 @@ uasort($posts, static function($a, $b) {
 
 <ul>
 <?php foreach($posts as $post): ?>
-    <li><a href="/posts/<?=$post->filename;?>"><?=$post->title;?></a> (<?=$post->date->format("Y m d");?>)</li>
+    <li><a href="/posts/<?=$post->filename;?>"><?=$post->title;?></a> (<?=$post->date->format("F jS, Y");?>)</li>
 <?php endforeach; ?>
 </ul>
 
