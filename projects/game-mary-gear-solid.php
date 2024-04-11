@@ -22,4 +22,6 @@ $date = "April 9th 2024";
 
 <p>That week is a blur to me.  Not because anything went wrong, but because everything kept going to right and smooth not much stood out as far as tales to regale. I used MakeHuman to create Mary and the Worker, I did the rigging and simple animation, and I sourced office related models from from sources like Turbosquid. I learned on the spot how to make the animation controller work, got input in very quickly, even got to learn about Navmesh's and patrol routes for the NPC's. I used an asset (at the time) called Cinemachine that allowed me to script the Camera super easily from follow mode to corner-cam mode</p>
 
+<p><em>This story is a work in progress, I write the little bits where I can</em></p>
+
 <?php require_once('../footer.php'); ?>
